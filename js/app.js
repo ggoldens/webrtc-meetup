@@ -1,4 +1,9 @@
+var STUN = {
+    url: 'stun:stun.l.google.com:19302'
+}
+
 var VideoCall = {
+  iceServers: { iceServers: [STUN] },
   requestMediaStream: function(event) {
     navigator.getUserMedia(
       {video: true, audio: false},
@@ -18,7 +23,12 @@ var VideoCall = {
   },
 
   startCall: function() {
-    console.log('A call will start...')
+    VideoCall.peerConnection = new RTCPeerConnection(VideoCall.iceServers)
+    VideoCall.peerConnection.onicecandidate = VideoCall.onIceCandidate
+  },
+
+  onIceCandidate: function(event) {
+    // send the candidate info to the other peer
   }
 }
 
