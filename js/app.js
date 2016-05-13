@@ -28,13 +28,14 @@ var VideoCall = {
   },
 
   startCall: function() {
-    connect(VideoCall.createOffer)
+    VideoCall.connect(VideoCall.createOffer)
   },
 
   connect: function(callback) {
     VideoCall.peerConnection = new RTCPeerConnection(VideoCall.iceServers)
     VideoCall.peerConnection.onicecandidate = VideoCall.onIceCandidate
     VideoCall.socket.on('candidate', VideoCall.onCandidate)
+    VideoCall.socket.on('answer', VideoCall.onAnswer)
     callback()
   },
 
@@ -44,6 +45,16 @@ var VideoCall = {
         VideoCall.peerConnection.setLocalDescription(desc)
         VideoCall.socket.emit('offer', desc)
       }, logError);
+  },
+
+  createAnswer: function(offer) {
+    var newOffer = new RTCSessionDescription(offer)
+    VideoCall.peerConnection.setRemoteDescription(newOffer)
+    VideoCall.peerConnection.createAnswer()
+      .then(function(answer) {
+        VideoCall.peerConnection.setLocalDescription(answer)
+        VideoCall.socket.emit('answer', answer)
+      })
   },
 
   onIceCandidate: function(event) {
@@ -58,6 +69,14 @@ var VideoCall = {
 
   onCallOffer: function(offer) {
     console.log('Yay, received an offer')
+    VideoCall.connect(function() {
+      VideoCall.createAnswer(offer)
+    })
+  },
+
+  onAnswer: function(answer) {
+    var newAnswer = new RTCSessionDescription(answer)
+    VideoCall.peerConnection.setRemoteDescription(newAnswer)
   }
 }
 
