@@ -4,6 +4,8 @@ var STUN = {
 
 var VideoCall = {
   iceServers: { iceServers: [STUN] },
+  socket: io('https://webrtc-meetup-io.herokuapp.com'),
+  
   requestMediaStream: function(event) {
     navigator.getUserMedia(
       {video: true, audio: false},
@@ -29,6 +31,7 @@ var VideoCall = {
 
   onIceCandidate: function(event) {
     // send the candidate info to the other peer
+    VideoCall.socket.emit('candidate', event.candidate)
   }
 }
 
