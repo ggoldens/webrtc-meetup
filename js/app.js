@@ -28,9 +28,17 @@ var VideoCall = {
   },
 
   startCall: function() {
+    connect(VideoCall.createOffer)
+  },
+
+  connect: function(callback) {
     VideoCall.peerConnection = new RTCPeerConnection(VideoCall.iceServers)
     VideoCall.peerConnection.onicecandidate = VideoCall.onIceCandidate
     VideoCall.socket.on('candidate', VideoCall.onCandidate)
+    callback()
+  },
+
+  createOffer: function() {
     VideoCall.peerConnection.createOffer()
       .then(function(desc) {
         VideoCall.peerConnection.setLocalDescription(desc)
