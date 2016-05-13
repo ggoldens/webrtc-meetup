@@ -15,7 +15,14 @@ var VideoCall = {
 
   noMediaStream: function(error) {
     console.log('Something went wrong...', error);
+  },
+
+  startCall: function() {
+    console.log('A call will start...')
   }
 }
 
 VideoCall.requestMediaStream()
+
+var callBtn = document.getElementById('call')
+callBtn.onclick = VideoCall.startCall
