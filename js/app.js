@@ -2,6 +2,8 @@ var STUN = {
     url: 'stun:stun.l.google.com:19302'
 }
 
+var logError = function(err) { console.log(err) }
+
 var VideoCall = {
   iceServers: { iceServers: [STUN] },
   socket: io('https://webrtc-meetup-io.herokuapp.com'),
@@ -18,6 +20,7 @@ var VideoCall = {
     VideoCall.localVideo = document.getElementById('myVideo');
     VideoCall.localStream = stream;
     VideoCall.localVideo.srcObject = stream;
+    VideoCall.socket.on('offer', VideoCall.onCallOffer)
   },
 
   noMediaStream: function(error) {
@@ -28,6 +31,11 @@ var VideoCall = {
     VideoCall.peerConnection = new RTCPeerConnection(VideoCall.iceServers)
     VideoCall.peerConnection.onicecandidate = VideoCall.onIceCandidate
     VideoCall.socket.on('candidate', VideoCall.onCandidate)
+    VideoCall.peerConnection.createOffer()
+      .then(function(desc) {
+        VideoCall.peerConnection.setLocalDescription(desc)
+        VideoCall.socket.emit('offer', desc)
+      }, logError);
   },
 
   onIceCandidate: function(event) {
@@ -38,6 +46,10 @@ var VideoCall = {
   onCandidate: function(candidate) {
     var newCandidate = new RTCIceCandidate(candidate)
     VideoCall.peerConnection.addIceCandidate(newCandidate)
+  },
+
+  onCallOffer: function(offer) {
+    console.log('Yay, received an offer')
   }
 }
 
