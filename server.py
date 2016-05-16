@@ -9,4 +9,5 @@ httpd.socket = ssl.wrap_socket (httpd.socket,
         keyfile="ssl/server.key",
         certfile='ssl/server.crt', server_side=True)
 
+print "The server is running!"
 httpd.serve_forever()
