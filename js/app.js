@@ -6,12 +6,12 @@ VideoCall = {
 	},
 
 	//getUserMedia success callback
-	onSuccessCallBack: function (stream){
+	onSuccessCallback: function (stream){
 		
 	},
 
 	//getUserMedia success callback
-	onErrorCallBack: function (err) {
+	onErrorCallback: function (err) {
 		
 	}
 
