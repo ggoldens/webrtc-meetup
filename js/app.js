@@ -3,11 +3,11 @@ VideoCall = {
 	//Call getUserMedia API
 	requestMediaStream: function() {
 		var constraints = {video:true, audio:false};
-		navigator.getUserMedia(constraints, this.onSuccessCallBack, this.onErrorCallBack);
+		navigator.getUserMedia(constraints, this.onSuccessCallback, this.onErrorCallback);
 	},
 
 	//getUserMedia success callback
-	onSuccessCallBack: function (stream){
+	onSuccessCallback: function (stream){
 		this.localVideo = document.getElementById('myVideo');
 		this.localStream = stream;
 		this.localVideo.srcObject = stream;
@@ -15,7 +15,7 @@ VideoCall = {
 	},
 
 	//getUserMedia on error callback
-	onErrorCallBack: function (err) {
+	onErrorCallback: function (err) {
 		console.log('navigator error:', err);
 	}
 
