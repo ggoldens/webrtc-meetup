@@ -14,7 +14,7 @@ VideoCall = {
 
 	},
 
-	//getUserMedia success callback
+	//getUserMedia on error callback
 	onErrorCallBack: function (err) {
 		console.log('navigator error:', err);
 	}
