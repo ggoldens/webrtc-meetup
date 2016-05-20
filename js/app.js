@@ -6,17 +6,14 @@ var logError = function (err) { console.log(err) }
 
 VideoCall = {
 	socket: io('https://webrtc-meetup-io.herokuapp.com'),
+
   requestMediaStream: function() {
 		 // The fun starts here!
   },
 
-  startCall: function () {
+  startCall: function () { },
 
-  },
-
-  hangUp: function () {
-
-  },
+  hangUp: function () { },
 
 }
 
