@@ -1,19 +1,33 @@
+var STUN = {
+	urls: ['stun:stun.l.google.com:19302'] 
+};
+
+var logError = function (err) { console.log('Error ---> ', err) }
+
 VideoCall = {
+	socket: io('https://webrtc-meetup-io.herokuapp.com'),
 
   requestMediaStream: function() {
-    var constraints = {video:true, audio:false};
-      navigator.getUserMedia(constraints, this.onSuccessCallback, this.onErrorCallback);
-    },
-
-  onSuccessCallback: function (stream){
-    this.localVideo = document.getElementById('myVideo');
-    this.localStream = stream;
-    this.localVideo.srcObject = stream;
+  	var constraints = {video:true, audio:false};
+  	navigator.getUserMedia(constraints, VideoCall.onMediaStream, logError);
   },
 
-  onErrorCallback: function (err) {
-    console.log('navigator error:', err);
-  }
+  onMediaStream: function (stream) {
+  	VideoCall.localVideo = document.getElementById('myVideo');
+  	VideoCall.localVideo.srcObject = stream;
+  	VideoCall.localStream = stream;
+  },
+
+  startCall: function () { },
+
+  hangUp: function () { },
+
 }
+
+var call = document.getElementById('call');
+var hangup = document.getElementById('hangup');
+call.onclick = VideoCall.startCall;
+hangup.onclick = VideoCall.hangUp;
+
 
 VideoCall.requestMediaStream();
