@@ -4,6 +4,7 @@ var STUN = {
 
 VideoCall = {
 	socket: io('https://webrtc-meetup-io.herokuapp.com'),
+	
 	requestMediaStream: function() {
 		 // The fun starts here!
   },
