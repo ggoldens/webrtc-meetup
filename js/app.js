@@ -1,33 +1,90 @@
+var STUN = {
+	url: 'stun:stun.l.google.com:19302'
+};
+
 VideoCall = {
+	socket: io('https://webrtc-meetup-io.herokuapp.com'),
 
   requestMediaStream: function() {
-    var constraints = {video:true, audio:false};
-    navigator.getUserMedia(constraints, this.onSuccessCallback, this.onErrorCallback);
+  	var constraints = {video:true, audio:false};
+  	navigator.getUserMedia(constraints, VideoCall.onMediaStream);
   },
 
-  onSuccessCallback: function (stream){
-    this.localVideo = document.getElementById('myVideo');
-    this.localStream = stream;
-    this.localVideo.srcObject = stream;
+  onMediaStream: function (stream) {
+  	VideoCall.localVideo = document.getElementById('myVideo');
+  	VideoCall.localVideo.srcObject = stream;
+  	VideoCall.localStream = stream;
+  	VideoCall.signaling();
   },
 
-  onErrorCallback: function (err) {
-    console.log('navigator error:', err);
+  signaling: function () {
+  	VideoCall.socket.on('offer', VideoCall.onOffer);
+  	VideoCall.socket.on('answer', VideoCall.onAnswer);
+  	VideoCall.socket.on('candidate', VideoCall.onCandidate);
   },
 
-  startCall: function () {
-    
+  onCandidate: function (candidate) {
+  	var newCandidate = new RTCIceCandidate(candidate);
+  	VideoCall.peerConnection.addIceCandidate(newCandidate);
   },
-  
-  hangUpCall: function () {
-    
+
+  onOffer: function (offer) {
+  	VideoCall.createPeerConnection();
+  	VideoCall.setRemoteDescription(offer);
+		VideoCall.createAnswer();
+		
+  },
+
+  onAnswer: function (answer) {
+  	VideoCall.setRemoteDescription(answer);
+  },
+
+  createAnswer: function () {
+  	VideoCall.peerConnection.createAnswer()
+  	.then(function(desc){
+  		VideoCall.peerConnection.setLocalDescription(desc);
+  		VideoCall.socket.emit('answer', desc);
+  	});
+  },
+
+  setRemoteDescription: function (sdp) {
+  	var newSdp = new RTCSessionDescription(sdp);
+  	VideoCall.peerConnection.setRemoteDescription(newSdp);
+  },
+
+  startCall: function () { 
+  	VideoCall.createPeerConnection();
+  	VideoCall.createOffer();
+  },
+
+  createPeerConnection: function (){
+  	VideoCall.peerConnection = new RTCPeerConnection({iceServers: [STUN]});
+  	VideoCall.peerConnection.addStream(VideoCall.localStream);
+  	VideoCall.peerConnection.onicecandidate = VideoCall.onIceCandidate;
+  	VideoCall.peerConnection.onaddstream = VideoCall.onAddStream;
+  },
+
+  onIceCandidate: function (event) {
+  	if(event.candidate) {
+  		VideoCall.socket.emit('candidate', event.candidate);
+  	}
+  },
+
+  onAddStream: function (event) {
+  	VideoCall.remoteVideo = document.getElementById('remoteVideo');
+  	VideoCall.remoteVideo.srcObject = event.stream;	
+  },
+
+  createOffer: function () {
+  	VideoCall.peerConnection.createOffer().then(function(desc){
+  			VideoCall.peerConnection.setLocalDescription(desc);
+  			VideoCall.socket.emit('offer', desc);
+  	});
   },
 
 }
 
-VideoCall.requestMediaStream();
+var call = document.getElementById('call');
+call.onclick = VideoCall.startCall;
 
-var callBtn = document.getElementById('call');
-var hangUpBtn = document.getElementById('hangup');
-callBtn.onclick = VideoCall.startCall;
-hangUpBtn.onclick = VideoCall.hangUpCall;
+VideoCall.requestMediaStream();
