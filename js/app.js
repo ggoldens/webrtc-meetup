@@ -5,8 +5,12 @@ var STUN = {
 VideoCall = {
 	socket: io('https://webrtc-meetup-io.herokuapp.com'),
 
+  showRemotePeer: function () {
+    $('.video-wrap').toggleClass('twoVideo');
+  },
+
   requestMediaStream: function() {
-  	var constraints = {video:true, audio:false};
+  	var constraints = {video:true, audio:true};
   	navigator.getUserMedia(constraints, VideoCall.onMediaStream);
   },
 
@@ -32,7 +36,6 @@ VideoCall = {
   	VideoCall.createPeerConnection();
   	VideoCall.setRemoteDescription(offer);
 		VideoCall.createAnswer();
-		
   },
 
   onAnswer: function (answer) {
@@ -73,6 +76,7 @@ VideoCall = {
   onAddStream: function (event) {
   	VideoCall.remoteVideo = document.getElementById('remoteVideo');
   	VideoCall.remoteVideo.srcObject = event.stream;	
+    VideoCall.showRemotePeer();
   },
 
   createOffer: function () {
