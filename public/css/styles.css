@@ -234,6 +234,12 @@ p {
 	background-repeat: repeat-x;
 } 
 
+.video-wrap .video-box .footer .visualizer.vslzr-gif {
+	background-image: url(../images/visualizer-gif.gif);
+	background-position: center bottom;
+  z-index: 1;  
+}
+
 .video-wrap .video-box .footer .visualizer.vslzr-01 {
 	background-image: url(../images/visualizer-layer-01.png);
   animation: animatedBackground 19s linear infinite;
