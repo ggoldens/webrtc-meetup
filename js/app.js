@@ -6,7 +6,7 @@ VideoCall = {
 	socket: io('https://webrtc-meetup-io.herokuapp.com'),
 
   showRemotePeer: function () {
-    $('.video-wrap').toggleClass('twoVideo');
+    $('.video-wrap').addClass('twoVideo');
   },
 
   requestMediaStream: function() {
