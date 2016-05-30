@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebRTC Challenge</title>
+    <link rel="stylesheet" type="text/css" href="/js/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="countainer main_stage">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" id="question"> </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="participant left" id="user_1">
+                <span class="placeholder_waiting">Waiting For Participant</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="participant left" id="user_2">
+                <span class="placeholder_waiting">Waiting For Participant</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6 ">
+            <div class="form-group col-md-6">
+                <label for="question" class="sr-only">Question</label>
+                <input type="text" class="form-control" id="question" placeholder="Question">
+            </div>
+            <button class="btn btn-primary col-md-3" id="send_question">Send Question</button>
+            <button class="btn btn-danger col-md-3" id="clear_question">Clear Question</button>
+        </div>
+
+    </div>
+
+
+</div>
+<script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+<script src="js/jquery/jquery-1.12.4.min.js"></script>
+<script src="js/bootstrap-3.3.6-dist/js/bootstrap.min.js" charset="utf-8"></script>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>
+
+

@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>getUserMedia</title>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Challenge</title>
+  <link rel="stylesheet" type="text/css" href="/js/bootstrap-3.3.6-dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-
 <body>
-  <h1>Hello World!</h1>
-  <div id="container">
-    <video id="myVideo" autoplay></video>
-    <video id="remoteVideo" autoplay></video>
-    <button id="call">Call</button>
+<div class="countainer main_stage">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" id="question"> </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="participant left" id="user_1">
+        <span class="placeholder_waiting">Waiting For Participant</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="participant left" id="user_2">
+        <span class="placeholder_waiting">Waiting For Participant</span>
+      </div>
+    </div>
   </div>
 
-  <script src="js/adapter.js"></script>
-  <script src="js/app.js"></script>
+</div>
+<script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+<script src="js/jquery/jquery-1.12.4.min.js"></script>
+<script src="js/bootstrap-3.3.6-dist/js/bootstrap.min.js" charset="utf-8"></script>
+<script src="js/app.js"></script>
 
 </body>
 </html>
+
