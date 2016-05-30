@@ -3,27 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Challenge</title>
+    <link rel="stylesheet" type="text/css" href="/js/bootstrap-3.3.6-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
 </head>
 <body>
-<div class="main_stage">
-    <div id="question">
+<div class="countainer main_stage">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" id="question"> </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="participant left" id="user_1">
+                <span class="placeholder_waiting">Waiting For Participant</span>
+            </div>
+        </div>
+        <div class="col-md-6">
 
+            <div class="participant left" id="user_2">
+                <span class="placeholder_waiting">Waiting For Participant</span>
+            </div>
+        </div>
     </div>
-    <div class="participant left" id="user_1">
-        <span class="placeholder_waiting">Waiting For Participant</span>
-    </div>
-    <div class="participant right" id="user_2">
-        <span class="placeholder_waiting">Waiting For Participant</span>
-    </div>
+    <div class="row">
     <button class="red_button hidden">ANSWER</button>
-
+    </div>
 </div>
 
 
 
+<script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
 <script src="js/jquery/jquery-1.12.4.min.js"></script>
+<script src="js/bootstrap-3.3.6-dist/js/bootstrap.min.js" charset="utf-8"></script>
 <script src="js/challenge.js"></script>
 
 </body>
