@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f637d0b-d04e-4d25-bf00-d7cdb011e05a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/visualizer-gif.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/visualizer-layer-01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/visualizer-layer-02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/visualizer-layer-03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/visualizer-mask.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/icons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/styles.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/bg_feo.jpg" afterPath="$PROJECT_DIR$/assets/images/bg_feo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/adapter.js" afterPath="$PROJECT_DIR$/assets/js/adapter.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/admin.js" afterPath="$PROJECT_DIR$/assets/js/admin.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/assets/js/app.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/css/bootstrap-theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/css/bootstrap-theme.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css.map" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/css/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/css/bootstrap.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/css/bootstrap.min.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/js/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap-3.3.6-dist/js/npm.js" afterPath="$PROJECT_DIR$/assets/js/bootstrap-3.3.6-dist/js/npm.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/challenge.js" afterPath="$PROJECT_DIR$/assets/js/challenge.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery/jquery-1.12.4.min.js" afterPath="$PROJECT_DIR$/assets/js/jquery/jquery-1.12.4.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/underscore/underscore.js" afterPath="$PROJECT_DIR$/assets/js/underscore/underscore.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.html" afterPath="$PROJECT_DIR$/admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challenge.html" afterPath="$PROJECT_DIR$/challenge.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/challenge.js" afterPath="$PROJECT_DIR$/assets/js/challenge.js" />
     </list>
     <ignored path="webrtc-meetup.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,7 +26,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="300">
@@ -69,11 +36,28 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="challenge.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/css/styles.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="343" column="11" selection-start-line="343" selection-start-column="11" selection-end-line="343" selection-end-column="11" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="visualizer-gif.gif" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/images/visualizer-gif.gif">
+              <provider selected="true" editor-type-id="images">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="challenge.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/challenge.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+                <state relative-caret-position="254">
+                  <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
                   <folding>
                     <element signature="e#0#48#0" expanded="false" />
                   </folding>
@@ -88,8 +72,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/mocks/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+                <state relative-caret-position="360">
+                  <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -123,8 +107,9 @@
         <option value="$PROJECT_DIR$/challenge.html" />
         <option value="$PROJECT_DIR$/js/admin.js" />
         <option value="$PROJECT_DIR$/js/challenge.js" />
-        <option value="$PROJECT_DIR$/assets/js/challenge.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/assets/css/styles.css" />
+        <option value="$PROJECT_DIR$/assets/js/challenge.js" />
       </list>
     </option>
   </component>
@@ -246,6 +231,28 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webrtc-meetup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webrtc-meetup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -342,12 +349,12 @@
       <updated>1464236350837</updated>
       <workItem from="1464236351992" duration="14399000" />
       <workItem from="1464631031272" duration="3000" />
-      <workItem from="1464648022904" duration="12084000" />
+      <workItem from="1464648022904" duration="13011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26486000" />
+    <option name="totallyTimeSpent" value="27413000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1894" y="75" width="1780" height="817" extended-state="0" />
@@ -645,29 +652,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/mocks/index.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/visualizer-gif.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="343" column="11" selection-start-line="343" selection-start-column="11" selection-end-line="343" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mocks/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/challenge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="254">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>

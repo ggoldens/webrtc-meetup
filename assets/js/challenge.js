@@ -14,7 +14,6 @@ var streamUIOptions = {
   frameRate: 15,
   insertMode: 'append',
   publishAudio:false,
-  fitMode: 'contain'
 };
 
 var session = OT.initSession(apiKey, sessionId)
@@ -49,10 +48,10 @@ var session = OT.initSession(apiKey, sessionId)
     countbackToQuestion(event.data.question);
   })
   .on('signal:question_answered', function(event) {
-    $("#answer_"+event.from.connectionId).html(event.data.answer).addClass("answered").removeClass("hidden");
+    $("#answer_"+event.from.connectionId).html(event.data.answer).addClass("user-ready");
   })
   .on('signal:reveal_answers', function(event) {
-    $(".user_answer").removeClass("answered");
+    $(".footer").addClass("user-ready show-answered");
   })
   .on('signal:clear_participants', function(event) {
     if(publisher){
@@ -102,7 +101,9 @@ var startCounting = function(question){
 var userBoxTemplate = function(connection_Id){
   var template = _.template('<div class="video-box" id="<%- user_box_id %>">'+
     '<div class="participant" id="<%- box_id %>"></div>'+
-    '<div class="footer" id="<%- answer_id %>">'+
+    '<div class="footer">'+
+    '<strong class="answer-count" id="<%- answer_count %>">1</strong>'+
+    '<span id="<%- answer_id %>"></span>'+
     '<div class="visualizer vslzr-gif"></div>'+
     '<div class="visualizer vslzr-mask"></div>'+
     '</div>'+
