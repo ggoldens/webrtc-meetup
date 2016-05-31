@@ -100,8 +100,8 @@ var startCounting = function(question){
 }
 
 var userBoxTemplate = function(connection_Id){
-  var template = _.template('<div class="video-box" id="<%- user_box_id %>">'+
-    '<div class="participant" id="<%- box_id %>"></div>'+
+  var template = _.template('<div class="video-box">'+
+    '<div class="video participant" id="<%- box_id %>"></div>'+
     '<div class="footer" id="<%- answer_id %>">'+
     '<div class="visualizer vslzr-gif"></div>'+
     '<div class="visualizer vslzr-mask"></div>'+
