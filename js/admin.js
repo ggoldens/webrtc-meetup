@@ -5,8 +5,9 @@ var apiKey = '45596182';
 var sessionId = '2_MX40NTU5NjE4Mn5-MTQ2NDIzNjc3Nzg1NX5Gcy9pNUFIYVY4NFZqMldLdHI0bFpqTk9-fg';
 var token = 'T1==cGFydG5lcl9pZD00NTU5NjE4MiZzaWc9YjhjNjM3NjlmMjAzMTZlODAxZjNiZDY3ZWRiNmU4Y2QxZGFkNjYyYTpzZXNzaW9uX2lkPTJfTVg0ME5UVTVOakU0TW41LU1UUTJOREl6TmpjM056ZzFOWDVHY3k5cE5VRklZVlk0TkZacU1sZExkSEkwYkZwcVRrOS1mZyZjcmVhdGVfdGltZT0xNDY0MjM2ODEyJm5vbmNlPTAuNjQxMTg5MTI1NTk5MzM5NiZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDY2ODI4ODEy';
 var publisher = null;
-var challenger_1 = null;
-var challenger_2 = null;
+var my_connection_id = null;
+var users = [];
+
 var streamUIOptions = {
   showControls: false,
   width: "100%",
@@ -18,42 +19,57 @@ var streamUIOptions = {
 };
 
 var session = OT.initSession(apiKey, sessionId)
-  .on('streamCreated', function(event) {
-    if (challenger_1 && challenger_2) {
-      return;
-    } else if (!challenger_1) {
-      challenger_1 = event.stream.id;
-      session.subscribe(event.stream, "user_1", streamUIOptions, function () {
-        $("#user_1").addClass("spot_taken");
-      });
-    } else if (!challenger_2) {
-      challenger_b = event.stream.id;
-      session.subscribe(event.stream, "user_2", streamUIOptions, function () {
-        $("#user_2").addClass("spot_taken");
-      });
+  .on('connectionCreated',function(event){
+    console.log(event);
+    if(event.connection != session.connection){
+      users.push(event.connection);
+      $("#user_count").html(users.length);
     }
+  })
+  .on('connectionDestroyed',function(event){
+    console.log(event);
+    var index = users.indexOf(event.connection);
+    if (index > -1) {
+      users.splice(index, 1);
+    }
+    $("#user_count").html(users.length);
+  })
+  .on('streamCreated', function(event) {
+    var user_id = event.stream.connection.connectionId;
+    $("#user_holder").append(userBoxTemplate(user_id));
+    session.subscribe(event.stream,'user_'+user_id,streamUIOptions);
+  })
+  .on('streamDestroyed', function(event) {
+    var user_id = event.stream.connection.connectionId;
+    $("#user_holder").remove("#box_"+user_id);
   })
   .on('signal:clear_question', function(event) {
-    $("#current_question").html("");
-  })
-  .on('signal:countback', function(event) {
-    console.log("starting countback")
+    $("#asked_question").html("");
   })
   .on('signal:new_question', function(event) {
-    console.log("New Question"+event.data.question);
-    $("#current_question").html(event.data.question);
+    $("#asked_question").html(event.data.question);
   })
-  .on('signal:challenge_accepted', function(event) {
-    if(publisher.stream.connection.connectionId == event.from.connectionId){
-      console.log("YOU ANSWER")
-    }else{
-      console.log("HE ANSWER")
-    }
+  .on('signal:question_answered', function(event) {
+    $("#answer_"+event.from.connectionId).html(event.data.answer).addClass("answered").removeClass("hidden");
+  })
+  .on('signal:reveal_answers', function(event) {
+    $(".user_answer").removeClass("hidden");
   })
   .connect(token, function(error) {
     console.log("admin in session");
   });
 
+var userBoxTemplate = function(connection_Id){
+  var template = _.template('<div class="col-md-6" id="<%- user_box_id %>">'+
+    '<div class="participant left" id="<%- box_id %>">'+
+    '<span class="placeholder_waiting">Waiting For Participant</span>'+
+  '</div>'+
+  '<div class="user_answer hidden left" id="<%- answer_id %>">'+
+    '<span>Esta es la respuesta de mia</span>'+
+  '</div>'+
+  '</div>');
+  return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id});
+};
 
 $(document).ready(function(){
 
@@ -82,6 +98,32 @@ $(document).ready(function(){
       } else {
         console.log('warning signal sent.');
       }});
+  });
+
+  $("#reveal_answers").click(function() {
+    var message = {
+      type: 'reveal_answers'
+    };
+    session.signal(message,function (error) {
+      if (error) {
+        console.log('onreveal_answers:ERROR', error);
+      } else {
+        console.log('warning signal sent.');
+      }});
+  });
+
+
+  $("#start_round").click(function () {
+    var temp_users = _.sample(users,2);
+    _.each(temp_users,function(user){
+      session.signal({type:"start_publishing",to:user},function (error) {
+        if (error) {
+          console.log('onSendStartPublishing:ERROR', error);
+        } else {
+          console.log('warning signal sent.');
+        }});
+    });
+
   });
 
 

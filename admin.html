@@ -9,19 +9,14 @@
 <body>
 <div class="countainer main_stage">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" id="question"> </div>
+        <div class="col-md-6 col-md-offset-3"><span>Users Waiting: <strong id="user_count">0</strong></span> </div>
+        <button class="btn btn-primary" id="start_round">Start Round</button>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <div class="participant left" id="user_1">
-                <span class="placeholder_waiting">Waiting For Participant</span>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="participant left" id="user_2">
-                <span class="placeholder_waiting">Waiting For Participant</span>
-            </div>
-        </div>
+        <div class="col-md-6 col-md-offset-3" id="asked_question"> </div>
+    </div>
+    <div class="row" id="user_holder">
+
     </div>
     <div class="row">
         <div class="col-md-offset-3 col-md-6 ">
@@ -31,6 +26,8 @@
             </div>
             <button class="btn btn-primary col-md-3" id="send_question">Send Question</button>
             <button class="btn btn-danger col-md-3" id="clear_question">Clear Question</button>
+            <button class="btn btn-danger col-md-3" id="reveal_answers">Reveal</button>
+
         </div>
 
     </div>
@@ -38,9 +35,9 @@
 
 </div>
 <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+<script src="js/underscore/underscore.js"></script>
 <script src="js/jquery/jquery-1.12.4.min.js"></script>
 <script src="js/bootstrap-3.3.6-dist/js/bootstrap.min.js" charset="utf-8"></script>
-
 <script src="js/admin.js"></script>
 
 </body>

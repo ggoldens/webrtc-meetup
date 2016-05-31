@@ -19,37 +19,46 @@ var streamUIOptions = {
 
 var session = OT.initSession(apiKey, sessionId)
   .on('streamCreated', function(event) {
-    session.subscribe(event.stream,'user_2',streamUIOptions);
+    var user_id = event.stream.connection.connectionId;
+    if(session.connection.connectionID != user_id){
+      $("#user_holder").append(userBoxTemplate(user_id));
+      session.subscribe(event.stream,'user_'+user_id,streamUIOptions);
+    }
+  })
+  .on('streamDestroyed', function(event) {
+    var user_id = event.stream.connection.connectionId;
+    $("#user_holder").remove("#box_"+user_id);
+  })
+  .on('signal:start_publishing',function(){
+    $("#user_holder").append(userBoxTemplate(session.connection.connectionId));
+    publisher = OT.initPublisher('user_'+session.connection.connectionId,streamUIOptions,function(){
+      console.log("ready to publish");
+    });
+    session.publish(publisher);
   })
   .on('signal:clear_question', function(event) {
     $("#question").html("");
-    $(".red_button").addClass("hidden");
+    $("#answer_fields").addClass("hidden");
     $(".participant").removeClass("active");
-
   })
   .on('signal:new_question', function(event) {
     countbackToQuestion(event.data.question);
   })
-  .on('signal:challenge_accepted', function(event) {
-    console.log("Challenge Accepted")
-    if(publisher.stream.connection.connectionId == event.from.connectionId){
-      $("#user_1").addClass("active");
-    }else{
-      $("#user_2").addClass("active");
-    }
+  .on('signal:question_answered', function(event) {
+    $("#answer_"+event.from.connectionId).html(event.data.answer).addClass("answered").removeClass("hidden");
+  })
+  .on('signal:reveal_answers', function(event) {
+    $("user_answer").removeClass("hidden");
   })
   .connect(token, function(error) {
-    publisher = OT.initPublisher('user_1',streamUIOptions,function(){
-      console.log("ready to publish");
-    });
-    session.publish(publisher);
+    console.log("Connected to session");
   });
 
 var countbackToQuestion = function (question) {
     $("#question").html("GET READY!");
-    $(".red_button").addClass("hidden");
+    $("#answer_fields").addClass("hidden");
     setTimeout(function(){startCounting(question)},2000);
-}
+};
 
 var startCounting = function(question){
 
@@ -66,25 +75,40 @@ var startCounting = function(question){
   var stopCounting = function() {
     clearInterval(interval_count);
     $("#question").html(question);
-    $(".red_button").removeClass("hidden");
+    $("#answer_fields").removeClass("hidden");
     count = 3;
   }
 }
+
+var userBoxTemplate = function(connection_Id){
+  var template = _.template('<div class="col-md-6" id="<%- user_box_id %>">'+
+    '<div class="participant left" id="<%- box_id %>">'+
+    '<span class="placeholder_waiting">Waiting For Participant</span>'+
+    '</div>'+
+    '<div class="user_answer hidden left" id="<%- answer_id %>">'+
+    '<span>Esta es la respuesta de mia</span>'+
+    '</div>'+
+    '</div>');
+  return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id});
+};
 
 
 
 
 $(document).ready(function(){
 
-  $(".red_button").click(function() {
+  $("#answer_question").click(function() {
     var message = {
-      type: 'challenge_accepted'
+      type: 'question_answered',
+      data:{
+        answer:$("#answer").val()
+      }
     };
     session.signal(message,function (error) {
       if (error) {
         console.log('onSendWarningSignal:ERROR', error);
       } else {
-        console.log('warning signal sent.');
+        console.log('answer has been sent!');
       }});
   });
 });
