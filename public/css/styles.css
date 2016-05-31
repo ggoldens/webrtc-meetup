@@ -271,6 +271,71 @@ p {
 	background-size: 100% 100%;
 }
 
+.app-wrap .video-box .footer.user-ready{
+  background: yellow;
+  z-index: 5;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  text-align: center;
+}
+
+.app-wrap .video-box .footer.user-ready:after{
+  z-index: 1;
+  display: inline-block;
+  content: "\e959" ;
+  font-size: 30px;
+  color: #000;
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 50px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-wrap .video-box .footer .answer-wrap {
+  display: none;
+}
+
+.app-wrap .video-box .footer.user-ready.show-answer:after {
+  display: none;
+}
+
+.app-wrap .video-box .footer.user-ready.show-answer .answer-wrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 5px 5px 5px 50px;
+  overflow: hidden;
+}
+
+.app-wrap .video-box .footer.user-ready.show-answer .answer-wrap span {
+  display: block;
+  text-align: left;  
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.app-wrap .video-box .footer.user-ready.show-answer .answer-wrap .answer-count {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  line-height: 34px;
+  font-size: 18px;
+  
+  
+}
+
 .call-btn {
   position: absolute;
   top: 10px;
