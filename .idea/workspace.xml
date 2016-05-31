@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f637d0b-d04e-4d25-bf00-d7cdb011e05a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/challenge.js" afterPath="$PROJECT_DIR$/assets/js/challenge.js" />
     </list>
     <ignored path="webrtc-meetup.iws" />
@@ -23,7 +22,7 @@
     <favorites_list name="webrtc-meetup" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.7121889">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
@@ -56,8 +55,8 @@
           <file leaf-file-name="challenge.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/challenge.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="254">
-                  <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+                <state relative-caret-position="449">
+                  <caret line="110" column="144" selection-start-line="110" selection-start-column="144" selection-end-line="110" selection-end-column="144" />
                   <folding>
                     <element signature="e#0#48#0" expanded="false" />
                   </folding>
@@ -349,12 +348,12 @@
       <updated>1464236350837</updated>
       <workItem from="1464236351992" duration="14399000" />
       <workItem from="1464631031272" duration="3000" />
-      <workItem from="1464648022904" duration="13011000" />
+      <workItem from="1464648022904" duration="13267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27413000" />
+    <option name="totallyTimeSpent" value="27669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1894" y="75" width="1780" height="817" extended-state="0" />
@@ -683,8 +682,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/challenge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        <state relative-caret-position="449">
+          <caret line="110" column="144" selection-start-line="110" selection-start-column="144" selection-end-line="110" selection-end-column="144" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
           </folding>

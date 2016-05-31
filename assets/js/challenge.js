@@ -108,7 +108,7 @@ var userBoxTemplate = function(connection_Id){
     '<div class="visualizer vslzr-mask"></div>'+
     '</div>'+
     '</div>');
-  return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id});
+  return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id, answer_count:"answer_order_"+connection_Id});
 };
 
 
