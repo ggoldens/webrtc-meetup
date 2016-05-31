@@ -3,32 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Challenge</title>
-  <link rel="stylesheet" type="text/css" href="/js/bootstrap-3.3.6-dist/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/js/bootstrap-3.3.6-dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 <body>
-<div class="countainer main_stage">
+<div class="app-wrap">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" id="user_message">
+      Welcome to the WebRTC Challenge! we'll get started in a minute! Please be ready in case you get picked!!!!
+    </div>
+    <div class="col-md-6 col-md-offset-3 hide" id="participant_message">
+      You have been picked!!! Put on your meanest face and get ready to answer!
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-6 col-md-offset-3" id="question"> </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="participant left" id="user_1">
-        <span class="placeholder_waiting">Waiting For Participant</span>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="participant left" id="user_2">
-        <span class="placeholder_waiting">Waiting For Participant</span>
-      </div>
-    </div>
+
+  <div class="align-videos" id="user_holder">
+
   </div>
 
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6  form-group hidden" id="answer_fields">
+      <label for="answer" class="sr-only">Question</label>
+      <input type="text" class="form-control" id="answer" placeholder="Question"/>
+      <button class="btn btn-primary" id="answer_question">Answer</button>
+    </div>
+  </div>
 </div>
+
+
+
 <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
-<script src="js/jquery/jquery-1.12.4.min.js"></script>
-<script src="js/bootstrap-3.3.6-dist/js/bootstrap.min.js" charset="utf-8"></script>
-<script src="js/app.js"></script>
+<script src="assets/js/jquery/jquery-1.12.4.min.js"></script>
+<script src="assets/js/underscore/underscore.js"></script>
+<script src="assets/js/bootstrap-3.3.6-dist/js/bootstrap.min.js" charset="utf-8"></script>
+<script src="assets/js/challenge.js"></script>
 
 </body>
 </html>
