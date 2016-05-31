@@ -53,7 +53,7 @@ var session = OT.initSession(apiKey, sessionId)
     $("#answer_"+event.from.connectionId).html(event.data.answer).addClass("answered").removeClass("hidden");
   })
   .on('signal:reveal_answers', function(event) {
-    $(".user_answer").removeClass("hidden");
+    $(".user_answer").removeClass("answered");
   })
   .connect(token, function(error) {
     console.log("admin in session");

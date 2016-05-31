@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f637d0b-d04e-4d25-bf00-d7cdb011e05a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.html" afterPath="$PROJECT_DIR$/admin.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challenge.html" afterPath="$PROJECT_DIR$/challenge.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/admin.js" afterPath="$PROJECT_DIR$/js/admin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/challenge.js" afterPath="$PROJECT_DIR$/js/challenge.js" />
     </list>
@@ -26,24 +24,24 @@
     <favorites_list name="webrtc-meetup" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48644206">
+    <splitter split-orientation="horizontal" split-proportion="0.34593263">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="challenge.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="challenge.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/challenge.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+                <state relative-caret-position="225">
+                  <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="admin.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/admin.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="28" column="78" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
+                <state relative-caret-position="330">
+                  <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -53,11 +51,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="challenge.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="challenge.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/challenge.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-355">
-                  <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+                <state relative-caret-position="365">
+                  <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
                   <folding>
                     <element signature="e#0#48#0" expanded="false" />
                   </folding>
@@ -65,18 +63,18 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/admin.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="50">
-                  <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+                <state relative-caret-position="215">
+                  <caret line="41" column="22" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#48#0" expanded="false" />
-                    <marker date="1464670346000" expanded="true" signature="2249:2503" placeholder="..." />
-                    <marker date="1464670346000" expanded="true" signature="2249:2504" placeholder="..." />
-                    <marker date="1464670346000" expanded="true" signature="2249:2515" placeholder="..." />
-                    <marker date="1464670346000" expanded="true" signature="2249:2516" placeholder="..." />
-                    <marker date="1464670346000" expanded="true" signature="2455:2503" placeholder="..." />
+                    <marker date="1464670670000" expanded="true" signature="2251:2505" placeholder="..." />
+                    <marker date="1464670670000" expanded="true" signature="2251:2506" placeholder="..." />
+                    <marker date="1464670670000" expanded="true" signature="2251:2517" placeholder="..." />
+                    <marker date="1464670670000" expanded="true" signature="2251:2518" placeholder="..." />
+                    <marker date="1464670670000" expanded="true" signature="2457:2505" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -116,11 +114,11 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/js/underscore/underscore.js" />
-        <option value="$PROJECT_DIR$/challenge.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/challenge.js" />
         <option value="$PROJECT_DIR$/admin.html" />
+        <option value="$PROJECT_DIR$/challenge.html" />
         <option value="$PROJECT_DIR$/js/admin.js" />
+        <option value="$PROJECT_DIR$/js/challenge.js" />
       </list>
     </option>
   </component>
@@ -315,12 +313,12 @@
       <updated>1464236350837</updated>
       <workItem from="1464236351992" duration="14399000" />
       <workItem from="1464631031272" duration="3000" />
-      <workItem from="1464648022904" duration="7069000" />
+      <workItem from="1464648022904" duration="7404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21471000" />
+    <option name="totallyTimeSpent" value="21806000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="23" width="1430" height="825" extended-state="0" />
@@ -400,11 +398,11 @@
           <caret line="46" column="76" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
-            <marker date="1464670346000" expanded="true" signature="2249:2503" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2504" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2515" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2516" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2455:2503" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2505" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2506" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2517" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2518" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2457:2505" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -475,11 +473,11 @@
           <caret line="46" column="76" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
-            <marker date="1464670346000" expanded="true" signature="2249:2503" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2504" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2515" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2516" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2455:2503" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2505" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2506" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2517" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2518" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2457:2505" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -563,14 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challenge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
@@ -579,35 +569,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/challenge.js">
+    <entry file="file://$PROJECT_DIR$/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin.html">
+    <entry file="file://$PROJECT_DIR$/challenge.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="78" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
+        <state relative-caret-position="225">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+        <state relative-caret-position="215">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="22" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
-            <marker date="1464670346000" expanded="true" signature="2249:2503" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2504" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2515" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2249:2516" placeholder="..." />
-            <marker date="1464670346000" expanded="true" signature="2455:2503" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2505" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2506" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2517" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2251:2518" placeholder="..." />
+            <marker date="1464670670000" expanded="true" signature="2457:2505" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/challenge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
