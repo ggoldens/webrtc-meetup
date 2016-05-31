@@ -27,7 +27,7 @@ var session = OT.initSession(apiKey, sessionId)
   })
   .on('streamDestroyed', function(event) {
     var user_id = event.stream.connection.connectionId;
-    $("#user_holder").remove("#box_"+user_id);
+    $("#box_"+user_id).remove();
   })
   .on('signal:start_publishing',function(){
     $("#user_holder").append(userBoxTemplate(session.connection.connectionId));
@@ -35,6 +35,10 @@ var session = OT.initSession(apiKey, sessionId)
       console.log("ready to publish");
     });
     session.publish(publisher);
+    $("#participant_message").removeClass("hide");
+  })
+  .on('signal:start_round', function(event) {
+    $("#user_message").addClass("hide");
   })
   .on('signal:clear_question', function(event) {
     $("#question").html("");
@@ -49,6 +53,19 @@ var session = OT.initSession(apiKey, sessionId)
   })
   .on('signal:reveal_answers', function(event) {
     $(".user_answer").removeClass("answered");
+  })
+  .on('signal:clear_participants', function(event) {
+    if(publisher){
+      $("#box_"+publisher.stream.connection.connectionId).remove();
+      session.unpublish(publisher);
+      publisher = null;
+      $("#participant_message").addClass("hide");
+    }
+    $("#question").html("");
+    $("#answer_fields").addClass("hidden");
+    $(".participant").removeClass("active");
+    $("#user_message").removeClass("hide");
+    $("#participant_message").addClass("hide");
   })
   .connect(token, function(error) {
     console.log("Connected to session");

@@ -5,8 +5,8 @@ var apiKey = '45596182';
 var sessionId = '2_MX40NTU5NjE4Mn5-MTQ2NDIzNjc3Nzg1NX5Gcy9pNUFIYVY4NFZqMldLdHI0bFpqTk9-fg';
 var token = 'T1==cGFydG5lcl9pZD00NTU5NjE4MiZzaWc9YjhjNjM3NjlmMjAzMTZlODAxZjNiZDY3ZWRiNmU4Y2QxZGFkNjYyYTpzZXNzaW9uX2lkPTJfTVg0ME5UVTVOakU0TW41LU1UUTJOREl6TmpjM056ZzFOWDVHY3k5cE5VRklZVlk0TkZacU1sZExkSEkwYkZwcVRrOS1mZyZjcmVhdGVfdGltZT0xNDY0MjM2ODEyJm5vbmNlPTAuNjQxMTg5MTI1NTk5MzM5NiZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDY2ODI4ODEy';
 var publisher = null;
-var my_connection_id = null;
 var users = [];
+var subscribers={};
 
 var streamUIOptions = {
   showControls: false,
@@ -37,11 +37,11 @@ var session = OT.initSession(apiKey, sessionId)
   .on('streamCreated', function(event) {
     var user_id = event.stream.connection.connectionId;
     $("#user_holder").append(userBoxTemplate(user_id));
-    session.subscribe(event.stream,'user_'+user_id,streamUIOptions);
+    subscribers[user_id] = session.subscribe(event.stream,'user_'+user_id,streamUIOptions);
   })
   .on('streamDestroyed', function(event) {
     var user_id = event.stream.connection.connectionId;
-    $("#user_holder").remove("#box_"+user_id);
+    $("#box_"+user_id).remove();
   })
   .on('signal:clear_question', function(event) {
     $("#asked_question").html("");
@@ -54,6 +54,9 @@ var session = OT.initSession(apiKey, sessionId)
   })
   .on('signal:reveal_answers', function(event) {
     $(".user_answer").removeClass("answered");
+  })
+  .on('signal:clear_participants', function(event) {
+
   })
   .connect(token, function(error) {
     console.log("admin in session");
@@ -70,6 +73,28 @@ var userBoxTemplate = function(connection_Id){
   '</div>');
   return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id});
 };
+
+var sendStartRound = function(){
+  session.signal({type:"start_round"},function (error) {
+    if (error) {
+      console.log('onSendStartPublishing:ERROR', error);
+    } else {
+      console.log("start round");
+    }});
+}
+
+
+var sendStartPublishing = function(){
+  var temp_users = _.sample(users,2);
+  _.each(temp_users,function(user){
+    session.signal({type:"start_publishing",to:user},function (error) {
+      if (error) {
+        console.log('onSendStartPublishing:ERROR', error);
+      } else {
+        console.log("start publishing sent");
+      }});
+  });
+}
 
 $(document).ready(function(){
 
@@ -114,17 +139,19 @@ $(document).ready(function(){
 
 
   $("#start_round").click(function () {
-    var temp_users = _.sample(users,2);
-    _.each(temp_users,function(user){
-      session.signal({type:"start_publishing",to:user},function (error) {
-        if (error) {
-          console.log('onSendStartPublishing:ERROR', error);
-        } else {
-          console.log('warning signal sent.');
-        }});
-    });
-
+    var message = {
+      type: 'clear_participants',
+      data:{
+        "question": $("#question").val()
+      }
+    };
+    session.signal(message,function (error) {
+      if (error) {
+        console.log('onSendWarningSignal:ERROR', error);
+      } else {
+        console.log('warning signal sent.');
+        sendStartRound();
+        sendStartPublishing();
+      }});
   });
-
-
 });

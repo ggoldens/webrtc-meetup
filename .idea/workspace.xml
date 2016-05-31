@@ -24,14 +24,14 @@
     <favorites_list name="webrtc-meetup" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.34593263">
+    <splitter split-orientation="horizontal" split-proportion="0.279515">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="challenge.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/challenge.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -54,8 +54,8 @@
           <file leaf-file-name="challenge.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/challenge.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="365">
-                  <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+                <state relative-caret-position="283">
+                  <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
                   <folding>
                     <element signature="e#0#48#0" expanded="false" />
                   </folding>
@@ -66,15 +66,15 @@
           <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/admin.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="215">
-                  <caret line="41" column="22" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="22" />
+                <state relative-caret-position="793">
+                  <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
                   <folding>
                     <element signature="e#0#48#0" expanded="false" />
-                    <marker date="1464670670000" expanded="true" signature="2251:2505" placeholder="..." />
-                    <marker date="1464670670000" expanded="true" signature="2251:2506" placeholder="..." />
-                    <marker date="1464670670000" expanded="true" signature="2251:2517" placeholder="..." />
-                    <marker date="1464670670000" expanded="true" signature="2251:2518" placeholder="..." />
-                    <marker date="1464670670000" expanded="true" signature="2457:2505" placeholder="..." />
+                    <marker date="1464714806000" expanded="true" signature="2310:2564" placeholder="..." />
+                    <marker date="1464714806000" expanded="true" signature="2310:2565" placeholder="..." />
+                    <marker date="1464714806000" expanded="true" signature="2310:2576" placeholder="..." />
+                    <marker date="1464714806000" expanded="true" signature="2310:2577" placeholder="..." />
+                    <marker date="1464714806000" expanded="true" signature="2516:2564" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -128,10 +128,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
-    <option name="y" value="23" />
-    <option name="width" value="1430" />
-    <option name="height" value="825" />
+    <option name="x" value="-1920" />
+    <option name="y" value="31" />
+    <option name="width" value="1780" />
+    <option name="height" value="995" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -313,18 +313,18 @@
       <updated>1464236350837</updated>
       <workItem from="1464236351992" duration="14399000" />
       <workItem from="1464631031272" duration="3000" />
-      <workItem from="1464648022904" duration="7404000" />
+      <workItem from="1464648022904" duration="10496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21806000" />
+    <option name="totallyTimeSpent" value="24898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="23" width="1430" height="825" extended-state="0" />
+    <frame x="-1920" y="31" width="1780" height="995" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13626686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10915293" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -398,11 +398,11 @@
           <caret line="46" column="76" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
-            <marker date="1464670670000" expanded="true" signature="2251:2505" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2506" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2517" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2518" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2457:2505" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2564" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2565" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2576" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2577" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2516:2564" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -473,11 +473,11 @@
           <caret line="46" column="76" selection-start-line="46" selection-start-column="76" selection-end-line="46" selection-end-column="76" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
-            <marker date="1464670670000" expanded="true" signature="2251:2505" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2506" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2517" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2518" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2457:2505" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2564" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2565" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2576" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2577" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2516:2564" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -579,31 +579,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/challenge.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        <state relative-caret-position="210">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="22" />
+        <state relative-caret-position="793">
+          <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
-            <marker date="1464670670000" expanded="true" signature="2251:2505" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2506" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2517" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2251:2518" placeholder="..." />
-            <marker date="1464670670000" expanded="true" signature="2457:2505" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2564" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2565" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2576" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2310:2577" placeholder="..." />
+            <marker date="1464714806000" expanded="true" signature="2516:2564" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/challenge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+        <state relative-caret-position="283">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
           </folding>
