@@ -121,7 +121,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(#E6E6E6 0%, #ffffff 100%);
+  background: linear-gradient(#201d21 0%, #54445b 100%);
 }
 
 .align-videos{
@@ -141,7 +141,7 @@ p {
   min-height: 250px;
   padding-bottom: 78px;
   margin: 35px 50px;
-  background: linear-gradient(#00c5ff 0%, #0091fe 100%);
+  background: #a0cecb;
   border-radius: 4px;
   box-shadow: 0px 25px 25px 16px rgba(0,0,0,0.1);
   transition: all 1s;   
@@ -197,13 +197,13 @@ p {
 .app-wrap .video-box:after{
   z-index: 1;
   display: block;
-  content: "\e8da" ;
+  content: "\e8e8" ;
   position: absolute;
   top:50%;
   left: 50%;   
-  margin: -65px 0 0 -30px;
-  font-size: 60px;
-  color: #fff;
+  margin: -45px 0 0 -20px;
+  font-size: 40px;
+  color: #342C37;
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -224,7 +224,7 @@ p {
   left: 0;
   right: 0;
   height: 50px;
-  background: linear-gradient(#ffffff 0%, #E6E6E6 100%); 
+  background: linear-gradient(#f7f7f8 0%, #ffffff 100%); 
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
 }
@@ -272,7 +272,7 @@ p {
 }
 
 .app-wrap .video-box .footer.user-ready{
-  background: yellow;
+  background: #F3C931;
   z-index: 5;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -334,7 +334,8 @@ p {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #fff;
+  color: #342C37;
+  background: rgba(255, 255, 255, 0.75);
   line-height: 34px;
   font-size: 18px;
   
