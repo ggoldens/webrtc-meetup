@@ -302,12 +302,16 @@ p {
   display: none;
 }
 
+.app-wrap .video-box .footer.user-ready .visualizer{
+  display: none;
+}
+
 .app-wrap .video-box .footer.user-ready.show-answer:after {
   display: none;
 }
 
 .app-wrap .video-box .footer.user-ready.show-answer .answer-wrap {
-  display: block;
+  display: table;
   position: relative;
   width: 100%;
   height: 100%;
@@ -316,7 +320,8 @@ p {
 }
 
 .app-wrap .video-box .footer.user-ready.show-answer .answer-wrap span {
-  display: block;
+  display: table-cell;
+  vertical-align: middle;
   text-align: left;  
   line-height: 18px;
   font-weight: bold;
