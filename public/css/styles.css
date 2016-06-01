@@ -93,6 +93,7 @@ button{
 a:hover, a:focus,
 button:hover, button:focus{
   outline: none;
+  color: inherit;
 }
 
 /*
@@ -460,9 +461,10 @@ body{
   position: absolute;
   width: 100%;
   background: #F3C931;
+  z-index: 500;
 }
 
-.question-wrap p{
+.question-wrap p {
   color: #342C37;
   font-size: 18px;
   line-height: 1.4;
@@ -472,13 +474,32 @@ body{
   min-height: 70px;
 }
 
+.question-wrap .show-input {
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 0 40px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.question-wrap .show-input:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
 
 
 /*
   Answer Question
 */
 
-.answer-this{
+.answer-this {
   z-index: 1000;
   position: absolute;
   top: 0;
@@ -500,10 +521,10 @@ body{
   padding: 50px 30px;
   background: -webkit-linear-gradient(#ffffff 0%, #e7e7e7 100%);
   border-radius: 4px;
-  box-shadow: 0px 25px 25px 16px;
+  box-shadow: 0px 25px 25px 16px rgba(0,0,0,0.2);
 }
 
-.answer-this .answer-box input.form-control{
+.answer-this .answer-box input.form-control {
   width: 240px;
   height: 40px;
   line-height: 1;
@@ -514,7 +535,7 @@ body{
   font-size: 14px;
 }
 
-.answer-this .answer-box button{
+.answer-this .answer-box button {
   padding: 0 20px;
   border: none;
   background: #a0cecb;
@@ -523,8 +544,20 @@ body{
   border-radius: 2px;
   vertical-align: middle;
   margin-left: 10px;
+  cursor: pointer;
 }
 
+.answer-this .answer-box button:hover {
+  background: #73bcb7;
+}
+
+.answer-this .answer-box .hide-box {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
 /*
   Media Query
 */

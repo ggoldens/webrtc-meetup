@@ -4,3 +4,15 @@ $( document ).ready(function() {
   });
 });
 
+$( document ).ready(function() {
+  $( " .show-input " ).click(function() {
+    $( " .answer-this " ).removeClass( "hide" );
+  });
+});
+
+$( document ).ready(function() {
+  $( " .hide-box " ).click(function() {
+    $( " .answer-this " ).addClass( "hide" );
+  });
+});
+
