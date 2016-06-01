@@ -16,21 +16,26 @@
 </head>
 <body>
 <div class="app-wrap">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3" id="user_message">
-      Welcome to the WebRTC Challenge! we'll get started in a minute! Please be ready in case you get picked!!!!
+  
+  <div class="alert-wrap">
+    <div class="modal" id="user_message">
+      <i class="icon-trophy2"></i>
+      <h4>Welcome to the WebRTC Challenge!</h4>
+      <p>
+          We'll get started in a minute! <br/>
+          Please be ready in case you get picked!!!!
+      </p>
     </div>
-    <div class="col-md-6 col-md-offset-3 hide" id="participant_message">
-      You have been picked!!! Put on your meanest face and get ready to answer!
+    <div class="alert alert-success hide" id="participant_message">
+      <p>You have been picked!!! Put on your meanest face and get ready to answer!</p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3" id="question"> </div>
+  
+  <div class="question-wrap">
+    <p class="" id="question"> </p>
   </div>
 
-  <div class="align-videos" id="user_holder">
-
-  </div>
+  <div class="align-videos" id="user_holder"></div>
 
   <div class="row">
     <div class="col-md-offset-3 col-md-6  form-group hidden" id="answer_fields">

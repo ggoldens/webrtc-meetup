@@ -51,7 +51,7 @@ var session = OT.initSession(apiKey, sessionId)
     $("#answer_"+event.from.connectionId).html(event.data.answer).addClass("user-ready");
   })
   .on('signal:reveal_answers', function(event) {
-    $(".footer").addClass("user-ready show-answered");
+    $(".footer").addClass("user-ready show-answer");
   })
   .on('signal:clear_participants', function(event) {
     if(publisher){
@@ -101,11 +101,13 @@ var startCounting = function(question){
 var userBoxTemplate = function(connection_Id){
   var template = _.template('<div class="video-box">'+
     '<div class="video participant" id="<%- box_id %>"></div>'+  
-    '<div class="footer">'+
-    '<strong class="answer-count" id="<%- answer_count %>">1</strong>'+
-    '<span id="<%- answer_id %>"></span>'+
+    '<div class="footer">'+ 
     '<div class="visualizer vslzr-gif"></div>'+
     '<div class="visualizer vslzr-mask"></div>'+
+    '<div class="answer-wrap">'+
+    '<strong class="answer-count" id="<%- answer_count %>">1</strong>'+
+    '<span id="<%- answer_id %>"></span>'+
+    '</div>'+
     '</div>'+
     '</div>');
   return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id, answer_count:"answer_order_"+connection_Id});
