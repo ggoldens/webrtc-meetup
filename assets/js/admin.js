@@ -63,15 +63,18 @@ var session = OT.initSession(apiKey, sessionId)
   });
 
 var userBoxTemplate = function(connection_Id){
-  var template = _.template('<div class="col-md-6" id="<%- user_box_id %>">'+
-    '<div class="participant left" id="<%- box_id %>">'+
-    '<span class="placeholder_waiting">Waiting For Participant</span>'+
-  '</div>'+
-  '<div class="user_answer hidden left" id="<%- answer_id %>">'+
-    '<span>Esta es la respuesta de mia</span>'+
-  '</div>'+
-  '</div>');
-  return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id});
+  var template = _.template('<div class="video-box" id="<%- user_box_id %>">'+
+    '<div class="video participant" id="<%- box_id %>"></div>'+
+    '<div class="footer">'+
+    '<div class="visualizer vslzr-gif"></div>'+
+    '<div class="visualizer vslzr-mask"></div>'+
+    '<div class="answer-wrap">'+
+    '<strong class="answer-count" id="<%- answer_count %>">1</strong>'+
+    '<span id="<%- answer_id %>"></span>'+
+    '</div>'+
+    '</div>'+
+    '</div>');
+  return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id, answer_count:"answer_order_"+connection_Id});
 };
 
 var sendStartRound = function(){
