@@ -9,12 +9,12 @@ var count = 3;
 var answer_number = 1;
 
 var streamUIOptions = {
-  showControls: false,
+  showControls: true,
   width: "100%",
   height: "100%",
   frameRate: 15,
   insertMode: 'append',
-  publishAudio:false,
+  publishAudio:true,
 };
 
 var session = OT.initSession(apiKey, sessionId)
