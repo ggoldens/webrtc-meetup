@@ -581,3 +581,37 @@ body{
     transform: rotate(359deg);
   }
 }
+
+
+/* 
+  Admin
+*/
+
+.bottomed{
+  bottom: 0;
+  z-index: 999;
+}
+
+#controls input.form-control {
+  width: 500px;
+  height: 40px;
+  line-height: 1;
+  padding: 0 10px;
+  border-radius: 5px;
+  vertical-align: middle;
+  border: 1px solid #7ba3a0;
+  font-size: 14px;
+}
+
+#controls button {
+  padding: 0 20px;
+  border: none;
+  background: #f3c931;
+  width: auto;
+  height: 40px;
+  border-radius: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 10px;
+}

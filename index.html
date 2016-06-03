@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Challenge</title>
-
+  <head>
+    <meta charset="UTF-8">
+    <title>Challenge</title>
+  
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300' rel='stylesheet' type='text/css'>
-
-    <!-- Icons -->
-    <link rel="stylesheet" type="text/css" href="public/css/icons.css">
-
-    <!-- Styles -->
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-
-</head>
-<body>
-<div class="app-wrap">
-
-  <div class="question-wrap hidden">
-    <p class="" id="question"> </p>
-    <div class="answer-box" id="anwer_fields">
-      <input type="text" class="form-control" id="answer" placeholder="Question"/>
-      <button class="btn btn-primary" id="answer_question">Answer</button>
-    </div>
-  </div>
   
-  <div class="alert-wrap">
-    <div class="alert alert-intro" id="user_message">
-      <i class="icon-trophy2"></i>
-      <h4>Welcome to the WebRTC Challenge!</h4>
-      <p>
-          We'll get started in a minute! <br/>
-          Please be ready in case you get picked!!!!
-      </p>
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="assets/css/icons.css">
+  
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  
+  </head>
+  
+  <body>
+    <div class="app-wrap">
+    
+      <div class="question-wrap hidden">
+        <p class="" id="question"> </p>
+        <div class="answer-box" id="anwer_fields">
+          <input type="text" class="form-control" id="answer" placeholder="Question"/>
+          <button class="btn btn-primary" id="answer_question">Answer</button>
+        </div>
+      </div>
+      
+      <div class="alert-wrap">
+        <div class="alert alert-intro" id="user_message">
+          <i class="icon-trophy2"></i>
+          <h4>Welcome to the WebRTC Challenge!</h4>
+          <p>
+              We'll get started in a minute! <br/>
+              Please be ready in case you get picked!!!!
+          </p>
+        </div>
+        <div class="alert alert-success hidden" id="participant_message">
+          <p>You have been picked!!! Put on your meanest face and get ready to answer!</p>
+        </div>
+      </div>
+    
+      <div class="align-videos" id="user_holder"></div>
+    
     </div>
-    <div class="alert alert-success hidden" id="participant_message">
-      <p>You have been picked!!! Put on your meanest face and get ready to answer!</p>
-    </div>
-  </div>
-
-  <div class="align-videos" id="user_holder"></div>
-
-</div>
-
-
-
-<script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
-<script src="assets/js/jquery/jquery-1.12.4.min.js"></script>
-<script src="assets/js/underscore/underscore.js"></script>
-<script src="assets/js/bootstrap-3.3.6-dist/js/bootstrap.min.js" charset="utf-8"></script>
-<script src="assets/js/challenge.js"></script>
-
-</body>
+    
+    <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+    <script src="assets/js/jquery/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/underscore/underscore.js"></script>
+    <script src="assets/js/bootstrap-3.3.6-dist/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="assets/js/challenge.js"></script>
+  
+  </body>
 </html>
 
