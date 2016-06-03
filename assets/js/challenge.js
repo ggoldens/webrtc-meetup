@@ -66,7 +66,6 @@ var session = OT.initSession(apiKey, sessionId)
     }
     $("#question").html("");
     $(".question-wrap").addClass("hidden");
-    $("#answer_fields").addClass("hidden");
     $(".participant").removeClass("active");
     $("#user_message").removeClass("hidden");
     $("#participant_message").addClass("hidden");

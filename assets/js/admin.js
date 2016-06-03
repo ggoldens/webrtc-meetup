@@ -7,6 +7,8 @@ var token = 'T1==cGFydG5lcl9pZD00NTU5NjE4MiZzaWc9YjhjNjM3NjlmMjAzMTZlODAxZjNiZDY
 var publisher = null;
 var users = [];
 var subscribers={};
+var answer_number = 1;
+
 
 var streamUIOptions = {
   showControls: false,
@@ -105,6 +107,7 @@ var sendStartPublishing = function(){
 $(document).ready(function(){
 
   $("#send_question").click(function() {
+    answer_number = 1;
     var message = {
       type: 'new_question',
       data:{
