@@ -50,10 +50,13 @@ var session = OT.initSession(apiKey, sessionId)
     $("#asked_question").html(event.data.question);
   })
   .on('signal:question_answered', function(event) {
-    $("#answer_"+event.from.connectionId).html(event.data.answer).addClass("answered").removeClass("hidden");
+    $("#answer_"+event.from.connectionId).html(event.data.answer);
+    $("#answer_order_"+event.from.connectionId).html(answer_number);
+    $("#answer_"+event.from.connectionId).parent().parent().addClass("user-ready");
+    answer_number++;
   })
   .on('signal:reveal_answers', function(event) {
-    $(".user_answer").removeClass("answered");
+    $(".footer").addClass("user-ready show-answer");
   })
   .on('signal:clear_participants', function(event) {
 
