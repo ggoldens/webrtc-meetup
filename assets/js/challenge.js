@@ -42,8 +42,10 @@ var session = OT.initSession(apiKey, sessionId)
   })
   .on('signal:clear_question', function(event) {
     $("#question").html("");
-    $("#answer_fields").addClass("hidden");
+    $(".question-wrap").addClass("hidden");
     $(".participant").removeClass("active");
+    $("#answer").val("");
+    $(".footer").removeClass("user-ready show-answer");
   })
   .on('signal:new_question', function(event) {
     countbackToQuestion(event.data.question);
