@@ -2,8 +2,8 @@
  * Created by andreaphillips on 5/25/16.
  */
 var apiKey = '45596182';
-var sessionId = '1_MX40NTQ5NDMzMn5-MTQ2NTg1MTA0ODgyMn43ei9xdUd0Q1B3WExXaVRiVXQwbmZiRm9-fg';
-var token='T1==cGFydG5lcl9pZD00NTQ5NDMzMiZzaWc9NGQxODFhY2E2M2U0YTAzYjAyNzNkOWY5NzI5ZTJhMjcwNTQ5YTk2MTpzZXNzaW9uX2lkPTFfTVg0ME5UUTVORE16TW41LU1UUTJOVGcxTVRBME9EZ3lNbjQzZWk5eGRVZDBRMUIzV0V4WGFWUmlWWFF3Ym1aaVJtOS1mZyZjcmVhdGVfdGltZT0xNDY1ODUyNzAwJm5vbmNlPTAuOTQzMzgyMDgyNzM5ODQ0OSZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDY4NDQ0Njk4';
+var sessionId = '1_MX40NTU5NjE4Mn5-MTQ2NTg1MjgzNDA5Mn5FWXFOZ1VpZDJWSDJzQzJJdTYxL2EyMTV-fg';
+var token='T1==cGFydG5lcl9pZD00NTU5NjE4MiZzaWc9NjIxMjMxY2M3ZDVlZjkyMmYyMDhmOGYzNDEwOTAyZmQ0N2RmZmRjZTpzZXNzaW9uX2lkPTFfTVg0ME5UVTVOakU0TW41LU1UUTJOVGcxTWpnek5EQTVNbjVGV1hGT1oxVnBaREpXU0RKelF6SkpkVFl4TDJFeU1UVi1mZyZjcmVhdGVfdGltZT0xNDY1ODUyODQzJm5vbmNlPTAuMjY5MTc0MjMxMjE2MzExNDUmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTQ2ODQ0NDg0Mw==';
 var publisher = null;
 var users = [];
 var subscribers={};
@@ -23,7 +23,7 @@ var streamUIOptions = {
 var session = OT.initSession(apiKey, sessionId)
   .on('connectionCreated',function(event){
     console.log(event);
-    if(event.connection != session.connection){
+    if(event.connection != session.connection && event.connection.data != "viewer=true"){
       users.push(event.connection);
       $("#user_count").html(users.length);
     }
