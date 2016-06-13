@@ -2,73 +2,87 @@
  * Created by andreaphillips on 5/25/16.
  */
 var apiKey = '45596182';
-var sessionId = '2_MX40NTU5NjE4Mn5-MTQ2NDIzNjc3Nzg1NX5Gcy9pNUFIYVY4NFZqMldLdHI0bFpqTk9-fg';
-var token = 'T1==cGFydG5lcl9pZD00NTU5NjE4MiZzaWc9YjhjNjM3NjlmMjAzMTZlODAxZjNiZDY3ZWRiNmU4Y2QxZGFkNjYyYTpzZXNzaW9uX2lkPTJfTVg0ME5UVTVOakU0TW41LU1UUTJOREl6TmpjM056ZzFOWDVHY3k5cE5VRklZVlk0TkZacU1sZExkSEkwYkZwcVRrOS1mZyZjcmVhdGVfdGltZT0xNDY0MjM2ODEyJm5vbmNlPTAuNjQxMTg5MTI1NTk5MzM5NiZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDY2ODI4ODEy';
-var challenger_1 = null;
-var challenger_2 = null;
+var sessionId = '1_MX40NTQ5NDMzMn5-MTQ2NTg1MTA0ODgyMn43ei9xdUd0Q1B3WExXaVRiVXQwbmZiRm9-fg';
+var token='T1==cGFydG5lcl9pZD00NTQ5NDMzMiZzaWc9YjE0ODAxODlmMDM5NTg1MTYzMGVmOWJiODAyMGQwYzFiZjYzYjQyMzpzZXNzaW9uX2lkPTFfTVg0ME5UUTVORE16TW41LU1UUTJOVGcxTVRBME9EZ3lNbjQzZWk5eGRVZDBRMUIzV0V4WGFWUmlWWFF3Ym1aaVJtOS1mZyZjcmVhdGVfdGltZT0xNDY1ODUxMjczJm5vbmNlPTAuMjUzNTgyOTM4NTc0MjU0NSZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDY4NDQzMjczJmNvbm5lY3Rpb25fZGF0YT12aWV3ZXIlM0R0cnVl';
+var publisher = null;
 var count = 3;
+var answer_number = 1;
 
 var streamUIOptions = {
-  showControls: false,
+  showControls: true,
   width: "100%",
   height: "100%",
   frameRate: 15,
   insertMode: 'append',
-  publishAudio:false,
-  fitMode: 'contain'
+  publishAudio:true,
 };
+
 var session = OT.initSession(apiKey, sessionId)
   .on('streamCreated', function(event) {
-    if(challenger_1 && challenger_2) {
-      return;
-    }else if(!challenger_1) {
-      challenger_1 = event.stream.id;
-      session.subscribe(event.stream,"user_1",streamUIOptions,function(){
-        $("#user_1").addClass("spot_taken");
-      });
-    }else if(!challenger_2){
-      challenger_2 = event.stream.id;
-      session.subscribe(event.stream,"user_2",streamUIOptions,function(){
-        $("#user_2").addClass("spot_taken");
-      });
+    var user_id = event.stream.connection.connectionId;
+    if(session.connection.connectionID != user_id){
+      $("#user_holder").append(userBoxTemplate(user_id));
+      session.subscribe(event.stream,'user_'+user_id,streamUIOptions);
     }
   })
   .on('streamDestroyed', function(event) {
-    console.log("streamDestroyed");
-    if(challenger_1 == event.stream.id){
-      challenger_1 = null;
-    }
-    if(challenger_2 == event.stream.id){
-      challenger_2 = null;
-    }
+    var user_id = event.stream.connection.connectionId;
+    $("#box_"+user_id).remove();
+  })
+  .on('signal:start_publishing',function(){
+    $("#user_holder").append(userBoxTemplate(session.connection.connectionId));
+    publisher = OT.initPublisher('user_'+session.connection.connectionId,streamUIOptions,function(){
+      console.log("ready to publish");
+    });
+    session.publish(publisher);
+    $("#participant_message").removeClass("hidden");
+  })
+  .on('signal:start_round', function(event) {
+    $("#user_message").addClass("hidden");
   })
   .on('signal:clear_question', function(event) {
     $("#question").html("");
+    $(".question-wrap").addClass("hidden");
+    $(".participant").removeClass("active");
+    $("#answer").val("");
+    $(".footer").removeClass("user-ready show-answer");
   })
   .on('signal:new_question', function(event) {
     countbackToQuestion(event.data.question);
   })
-  .on('signal:challenge_accepted', function(event) {
-    console.log("Challenge Accepted")
-    if(publisher.stream.connection.connectionId == event.from.connectionId){
-      $("#user_1").addClass("active");
-    }else{
-      $("#user_2").addClass("active");
-    }
+  .on('signal:question_answered', function(event) {
+    $("#answer_"+event.from.connectionId).html(event.data.answer);
+    $("#answer_order_"+event.from.connectionId).html(answer_number);
+    $("#answer_"+event.from.connectionId).parent().parent().addClass("user-ready");
+    answer_number++;
   })
-  .on('signal:question_winner', function(event) {
-    console.log("New Question Winner")
+  .on('signal:reveal_answers', function(event) {
+    $(".footer").addClass("user-ready show-answer");
+  })
+  .on('signal:clear_participants', function(event) {
+    if(publisher){
+      $("#box_"+publisher.stream.connection.connectionId).remove();
+      session.unpublish(publisher);
+      publisher = null;
+      $("#participant_message").addClass("hidden");
+    }
+    $("#question").html("");
+    $(".question-wrap").addClass("hidden");
+    $(".participant").removeClass("active");
+    $("#user_message").removeClass("hidden");
+    $("#participant_message").addClass("hidden");
   })
   .connect(token, function(error) {
-    console.log("connected to session! watch");
+    console.log("Connected to session");
   });
 
-
 var countbackToQuestion = function (question) {
+  answer_number = 1;
+  $(".question-wrap").removeClass("hidden");
   $("#question").html("GET READY!");
-  $(".red_button").addClass("hidden");
+  $("#answer_fields").addClass("hidden");
   setTimeout(function(){startCounting(question)},2000);
-}
+};
 
 var startCounting = function(question){
 
@@ -85,6 +99,46 @@ var startCounting = function(question){
   var stopCounting = function() {
     clearInterval(interval_count);
     $("#question").html(question);
+    if(publisher){
+      $("#answer_fields").removeClass("hidden");
+    }
     count = 3;
   }
 }
+
+var userBoxTemplate = function(connection_Id){
+  var template = _.template('<div class="video-box" id="<%- user_box_id %>">'+
+    '<div class="video participant" id="<%- box_id %>"></div>'+
+    '<div class="footer">'+
+    '<div class="visualizer vslzr-gif"></div>'+
+    '<div class="visualizer vslzr-mask"></div>'+
+    '<div class="answer-wrap">'+
+    '<strong class="answer-count" id="<%- answer_count %>">1</strong>'+
+    '<span id="<%- answer_id %>"></span>'+
+    '</div>'+
+    '</div>'+
+    '</div>');
+  return template({user_box_id:"box_"+connection_Id,box_id:"user_"+connection_Id, answer_id:"answer_"+connection_Id, answer_count:"answer_order_"+connection_Id});
+};
+
+
+
+
+$(document).ready(function(){
+
+  $("#answer_question").click(function() {
+    var message = {
+      type: 'question_answered',
+      data:{
+        answer:$("#answer").val()
+      }
+    };
+    session.signal(message,function (error) {
+      if (error) {
+        console.log('onSendWarningSignal:ERROR', error);
+      } else {
+        console.log('answer has been sent!');
+        $("#answer_fields").addClass("hidden");
+      }});
+  });
+});

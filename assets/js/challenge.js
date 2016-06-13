@@ -2,8 +2,8 @@
  * Created by andreaphillips on 5/25/16.
  */
 var apiKey = '45596182';
-var sessionId = '2_MX40NTU5NjE4Mn5-MTQ2NDIzNjc3Nzg1NX5Gcy9pNUFIYVY4NFZqMldLdHI0bFpqTk9-fg';
-var token = 'T1==cGFydG5lcl9pZD00NTU5NjE4MiZzaWc9YjhjNjM3NjlmMjAzMTZlODAxZjNiZDY3ZWRiNmU4Y2QxZGFkNjYyYTpzZXNzaW9uX2lkPTJfTVg0ME5UVTVOakU0TW41LU1UUTJOREl6TmpjM056ZzFOWDVHY3k5cE5VRklZVlk0TkZacU1sZExkSEkwYkZwcVRrOS1mZyZjcmVhdGVfdGltZT0xNDY0MjM2ODEyJm5vbmNlPTAuNjQxMTg5MTI1NTk5MzM5NiZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDY2ODI4ODEy';
+var sessionId = '1_MX40NTQ5NDMzMn5-MTQ2NTg1MTA0ODgyMn43ei9xdUd0Q1B3WExXaVRiVXQwbmZiRm9-fg';
+var token ='T1==cGFydG5lcl9pZD00NTQ5NDMzMiZzaWc9Y2RkMGQ0Y2VjNDdhNzhhZDg3YTViMWI0NTQxZGQ3NTM5ZDA1OTgxOTpzZXNzaW9uX2lkPTFfTVg0ME5UUTVORE16TW41LU1UUTJOVGcxTVRBME9EZ3lNbjQzZWk5eGRVZDBRMUIzV0V4WGFWUmlWWFF3Ym1aaVJtOS1mZyZjcmVhdGVfdGltZT0xNDY1ODUxMTUzJm5vbmNlPTAuODk1MjAwMzQzMzM2OTEmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTQ2ODQ0MzE1Mw==';
 var publisher = null;
 var count = 3;
 var answer_number = 1;
@@ -39,6 +39,7 @@ var session = OT.initSession(apiKey, sessionId)
   })
   .on('signal:start_round', function(event) {
     $("#user_message").addClass("hidden");
+    $("#answer").val("");
   })
   .on('signal:clear_question', function(event) {
     $("#question").html("");
