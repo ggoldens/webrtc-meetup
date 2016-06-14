@@ -73,6 +73,9 @@ var session = OT.initSession(apiKey, sessionId)
     $("#user_message").removeClass("hidden");
     $("#participant_message").addClass("hidden");
   })
+  .on('signal:winner', function(event) {
+    $("#"+event.data.winner).addClass("winner");
+  })
   .connect(token, function(error) {
     console.log("Connected to session");
   });

@@ -290,6 +290,9 @@ body{
   border-bottom-left-radius: 4px;
   text-align: center;
 }
+.app-wrap .video-box.winner .footer.user-ready{
+  background: #8ebd28;
+}
 
 .app-wrap .video-box .footer.user-ready:after{
   z-index: 1;

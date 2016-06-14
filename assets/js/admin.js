@@ -60,9 +60,6 @@ var session = OT.initSession(apiKey, sessionId)
   .on('signal:reveal_answers', function(event) {
     $(".footer").addClass("user-ready show-answer");
   })
-  .on('signal:clear_participants', function(event) {
-
-  })
   .connect(token, function(error) {
     console.log("admin in session");
   });
@@ -163,4 +160,23 @@ $(document).ready(function(){
         sendStartPublishing();
       }});
   });
+
+  $("#user_holder").on('click',".answer-count",function(e){
+    var winner_id = $(e.currentTarget).parents(".video-box").prop("id");
+    var message = {
+      type:"winner",
+      data:{
+        winner:winner_id
+      }
+    }
+    session.signal(message,function(error){
+      if(error){
+        console.log("error sending winner");
+      }else{
+        $("#"+winner_id).addClass("winner");
+      }
+
+    })
+
+  })
 });
