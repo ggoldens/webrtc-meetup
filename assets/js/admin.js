@@ -90,7 +90,7 @@ var sendStartRound = function(){
 
 
 var sendStartPublishing = function(){
-  var temp_users = _.sample(users,2);
+  var temp_users = _.sample(users,3);
   _.each(temp_users,function(user){
     session.signal({type:"start_publishing",to:user},function (error) {
       if (error) {

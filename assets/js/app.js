@@ -14,7 +14,7 @@ var streamUIOptions = {
   height: "100%",
   frameRate: 15,
   insertMode: 'append',
-  publishAudio:true,
+  publishAudio:false,
 };
 
 var session = OT.initSession(apiKey, sessionId)

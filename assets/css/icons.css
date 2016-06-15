@@ -3030,4 +3030,6 @@
 .icon-ellipsis:before {
     content: "\e9e9";
 }
-
+.icon-spinner-3:before {
+    content: "\e002";
+}

@@ -7,6 +7,7 @@ var token ='T1==cGFydG5lcl9pZD00NTU5NjE4MiZzaWc9OTdhYzY5Y2ZjZDM2OTI4ZmM0YmM2NmQ5
 var publisher = null;
 var count = 3;
 var answer_number = 1;
+var is_publishing = false;
 
 var streamUIOptions = {
   showControls: true,
@@ -14,13 +15,14 @@ var streamUIOptions = {
   height: "100%",
   frameRate: 15,
   insertMode: 'append',
-  publishAudio:true,
+  publishAudio:false,
 };
 
 var session = OT.initSession(apiKey, sessionId)
   .on('streamCreated', function(event) {
+    console.log("for conference purposes not subscribing to streams");
     var user_id = event.stream.connection.connectionId;
-    if(session.connection.connectionID != user_id){
+    if(session.connection.connectionID != user_id && is_publishing){
       $("#user_holder").append(userBoxTemplate(user_id));
       session.subscribe(event.stream,'user_'+user_id,streamUIOptions);
     }
@@ -30,16 +32,29 @@ var session = OT.initSession(apiKey, sessionId)
     $("#box_"+user_id).remove();
   })
   .on('signal:start_publishing',function(){
-    $("#user_holder").append(userBoxTemplate(session.connection.connectionId));
-    publisher = OT.initPublisher('user_'+session.connection.connectionId,streamUIOptions,function(){
-      console.log("ready to publish");
-    });
-    session.publish(publisher);
-    $("#participant_message").removeClass("hidden");
+    is_publishing = true;
+    $("#load_participant_message").removeClass("hidden");
+    $("#next_round_participant_message").addClass("hidden");
+    setTimeout(function(){
+      $("#user_holder").append(userBoxTemplate(session.connection.connectionId));
+      publisher = OT.initPublisher('user_'+session.connection.connectionId,streamUIOptions,function(){
+        console.log("ready to publish");
+      });
+      session.publish(publisher);
+      $("#load_participant_message").addClass("hidden");
+      $("#participant_message").removeClass("hidden");
+    },3000);
+
   })
   .on('signal:start_round', function(event) {
     $("#user_message").addClass("hidden");
     $("#answer").val("");
+    is_publishing = false;
+    setTimeout(function(){
+      if(!is_publishing){
+        $("#next_round_participant_message").removeClass("hidden");
+      }
+    },3000);
   })
   .on('signal:clear_question', function(event) {
     $("#question").html("");
@@ -49,7 +64,9 @@ var session = OT.initSession(apiKey, sessionId)
     $(".footer").removeClass("user-ready show-answer");
   })
   .on('signal:new_question', function(event) {
-    countbackToQuestion(event.data.question);
+    if(is_publishing){
+      countbackToQuestion(event.data.question);
+    }
   })
   .on('signal:question_answered', function(event) {
     $("#answer_"+event.from.connectionId).html(event.data.answer);
@@ -62,6 +79,7 @@ var session = OT.initSession(apiKey, sessionId)
   })
   .on('signal:clear_participants', function(event) {
     if(publisher){
+      is_publishing = false;
       $("#box_"+publisher.stream.connection.connectionId).remove();
       session.unpublish(publisher);
       publisher = null;
@@ -103,7 +121,7 @@ var startCounting = function(question){
   var stopCounting = function() {
     clearInterval(interval_count);
     $("#question").html(question);
-    if(publisher){
+    if(is_publishing && publisher){
       $("#answer_fields").removeClass("hidden");
     }
     count = 3;
